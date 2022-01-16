@@ -9,11 +9,11 @@ class ClientController extends Controller
 
 
 
-  function showshop()
+  function showproducts()
   {
     
     $data['list_produk'] = Produk::paginate(3);
-    return view('client.shop', $data);
+    return view('client.products', $data);
   }
 
   function filter()
@@ -22,7 +22,7 @@ class ClientController extends Controller
     $data['nama'] = $nama;
     $data['list_produk'] = Produk::where('nama', 'like', "%$nama%")->get();
 
-    return view('client.shop', $data);
+    return view('client.products', $data);
   }
 
   function filter2()
@@ -33,7 +33,7 @@ class ClientController extends Controller
     $data['harga_max'] = $harga_max;
 
     $data['list_produk'] = Produk::whereBetween('harga', [$harga_min, $harga_max])->get();
-    return view('client.shop', $data);
+    return view('client.products', $data);
   }
 
 
@@ -49,11 +49,9 @@ class ClientController extends Controller
   {
     return view('client.about');
   }
-
-  function showproducts(Produk $produk)
+   function showclient()
   {
-
-    $data['produk'] = $produk;
-    return view('client.fruits', $data);
+    return view('client.client');
   }
+ 
 }

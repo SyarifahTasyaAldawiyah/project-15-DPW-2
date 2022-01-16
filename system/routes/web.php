@@ -91,9 +91,9 @@ Route::get('products', [ClientController::class, 'showproducts'] );
 Route::get('about', [ClientController::class, 'showabout'] );
 Route::get('client', [ClientController::class, 'showclient'] );
 Route::get('contact', [ClientController::class, 'showcontact'] );
-Route::post('shop/filter', [ClientController::class, 'filter']);
-Route::post('shop/filter2', [ClientController::class, 'filter2']);
-Route::get('fruits/{produk}', [ClientController::class, 'showproducts']);
+Route::post('products/filter', [ClientController::class, 'filter']);
+Route::post('products/filter2', [ClientController::class, 'filter2']);
+Route::get('products/{produk}', [ClientController::class, 'showproducts']);
 
 
 //alamat
